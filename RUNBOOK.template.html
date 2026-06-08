@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{DOMAIN_TITLE}} - Demo runbook</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #161a22;
+    --ink: #e6e6e6;
+    --muted: #9aa0a6;
+    --accent: #6ea8fe;
+    --rules: #2a6db0;
+    --graph: #8a4fbe;
+    --heuristic: #d4a017;
+    --solver: #d97a4a;
+    --rule5: #5cb85c;
+    --border: #2a2f3a;
+    --code-bg: #0b0d12;
+    --good: #5cb85c;
+    --warn: #d4a017;
+    --bad: #c0392b;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  body { margin: 0; background: var(--bg); color: var(--ink); }
+  header {
+    padding: 32px 40px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 { margin: 0 0 4px; font-size: 28px; font-weight: 600; }
+  header p.lede { margin: 0; color: var(--muted); max-width: 720px; }
+  header .meta {
+    margin-top: 12px;
+    display: flex;
+    gap: 16px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  main { padding: 24px 40px 80px; max-width: 1080px; }
+  section { margin-top: 32px; }
+  section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+  }
+  .badge.rules { background: var(--rules); }
+  .badge.graph { background: var(--graph); }
+  .badge.heuristic { background: var(--heuristic); color: #1a1a1a; }
+  .badge.solver { background: var(--solver); }
+  .badge.rule5 { background: var(--rule5); color: #1a1a1a; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 16px; font-weight: 600; }
+  .card .why { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+  .card .beat {
+    font-style: italic;
+    color: var(--accent);
+    margin-bottom: 12px;
+    border-left: 3px solid var(--accent);
+    padding-left: 12px;
+  }
+  .card .figure { text-align: center; margin: 16px 0; }
+  .card .figure img { max-width: 100%; border-radius: 4px; border: 1px solid var(--border); }
+  .card .figure-caption { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .anchored {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .anchored td, .anchored th {
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    text-align: left;
+  }
+  .anchored th { background: var(--code-bg); color: var(--muted); font-weight: 500; }
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    overflow-x: auto;
+    font-size: 13px;
+    color: var(--ink);
+  }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    padding: 8px 12px;
+    border-left: 3px solid var(--border);
+    margin-bottom: 4px;
+  }
+  .checklist li.good { border-left-color: var(--good); }
+  .checklist li.warn { border-left-color: var(--warn); }
+  .checklist li.bad { border-left-color: var(--bad); }
+  .tabs { display: flex; gap: 4px; margin: 24px 0 16px; }
+  .tabs input[type=radio] { display: none; }
+  .tabs label {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: var(--muted);
+  }
+  .tabs input[type=radio]:checked + label {
+    background: var(--accent);
+    color: #0f1115;
+    border-color: var(--accent);
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>{{DOMAIN_TITLE}} - Demo runbook</h1>
+  <p class="lede">{{DOMAIN_SUBTITLE}} {{N}}-act RelationalAI demo against the SE Snowflake account.</p>
+  <div class="meta">
+    <span>Engines: <code>{{LOGIC_ENGINE}}</code>, <code>{{PRESCRIPTIVE_ENGINE}}</code></span>
+    <span>Database: <code>{{DATABASE}}</code></span>
+    <span>Agent: <code>{{AGENT_NAME}}</code></span>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>Pre-flight (10 minutes before showtime)</h2>
+  <div class="card">
+    <h3>Run the gate</h3>
+    <p class="why">One command. If anything fails, the script tells you what and why.</p>
+    <pre>.venv/bin/python prep_demo.py</pre>
+    <p class="why">Useful flags:</p>
+    <pre>--skip-figures      # don't regenerate PNGs
+--skip-chat         # don't smoke-test the SI agent
+--skip-snowsight    # don't upload the Snowsight notebook
+--redeploy          # force agent redeploy</pre>
+  </div>
+</section>
+
+<section>
+  <h2>Anchored numbers</h2>
+  <div class="card">
+    <p class="why">These reproduce exactly under <code>data/{{DOMAIN}}_demo_validation.sql</code>. If the gate is green, all of these are live.</p>
+    <table class="anchored">
+      <thead><tr><th>Metric</th><th>Value</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>{{METRIC_1_NAME}}</td><td>{{METRIC_1_VALUE}}</td><td>{{METRIC_1_NOTES}}</td></tr>
+        <tr><td>{{METRIC_2_NAME}}</td><td>{{METRIC_2_VALUE}}</td><td>{{METRIC_2_NOTES}}</td></tr>
+        <!-- add rows as needed -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>The {{N}} acts</h2>
+
+  <div class="card">
+    <h3><span class="badge rules">Rules</span> Act 1 - {{ACT1_TITLE}}</h3>
+    <p class="why">{{ACT1_WHY}}</p>
+    <p class="beat">Speaker beat: {{ACT1_BEAT}}</p>
+    <div class="figure">
+      <img src="build/figures/act1_{{ACT1_SLUG}}.png" alt="{{ACT1_TITLE}}">
+      <div class="figure-caption">Expected result. Bars / rows / shape.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge graph">Graph</span> Act 2 - {{ACT2_TITLE}}</h3>
+    <p class="why">{{ACT2_WHY}}</p>
+    <p class="beat">Speaker beat: {{ACT2_BEAT}}</p>
+    <div class="figure">
+      <img src="build/figures/act2_{{ACT2_SLUG}}.png" alt="{{ACT2_TITLE}}">
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge heuristic">Heuristic</span> Act 3 - {{ACT3_TITLE}}</h3>
+    <p class="why">{{ACT3_WHY}}</p>
+    <p class="beat">Speaker beat: {{ACT3_BEAT}}</p>
+    <p class="why"><em>Note: the predictive reasoner (GNN) is preview. This is a deterministic fit-score expressed in PyRel.</em></p>
+    <div class="figure">
+      <img src="build/figures/act3_{{ACT3_SLUG}}.png" alt="{{ACT3_TITLE}}">
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge solver">Prescriptive</span> Act 4 - {{ACT4_TITLE}}</h3>
+    <p class="why">{{ACT4_WHY}}</p>
+    <p class="beat">Speaker beat: {{ACT4_BEAT}} Budget 2-3 min of dead air for the solver - use it to narrate.</p>
+    <div class="figure">
+      <img src="build/figures/act4_{{ACT4_SLUG}}.png" alt="{{ACT4_TITLE}}">
+    </div>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge rule5">Persistent rule</span> Act 5 - {{ACT5_TITLE}}</h3>
+    <p class="why">{{ACT5_WHY}}</p>
+    <p class="beat">Speaker beat: {{ACT5_BEAT}} Live-add the rule. Re-solve. Audience sees the answer flip.</p>
+    <div class="figure">
+      <img src="build/figures/act5_{{ACT5_SLUG}}.png" alt="{{ACT5_TITLE}}">
+    </div>
+  </div>
+
+</section>
+
+<section>
+  <h2>If things break</h2>
+  <div class="card">
+    <ul class="checklist">
+      <li class="warn"><strong>Engine not READY.</strong> <code>.venv/bin/rai reasoners list</code> to confirm. The gate auto-resumes them.</li>
+      <li class="warn"><strong>Stale notebook in Snowsight.</strong> <code>.venv/bin/python prep_demo.py --skip-chat --skip-figures</code> re-uploads it.</li>
+      <li class="warn"><strong>Agent answering with stale schema.</strong> <code>.venv/bin/python -m agent.deploy update</code> refreshes sprocs without re-registering.</li>
+      <li class="bad"><strong>Solver returning INFEASIBLE.</strong> Not a runtime problem - your formulation drifted. Check <code>data/{{DOMAIN}}_demo_validation.sql</code> first; if the data changed under you, regenerate. Otherwise the formulation needs <code>/rai-prescriptive-problem-formulation</code>.</li>
+      <li class="bad"><strong>Snowflake credentials.</strong> <code>snow connection test -c rai</code>. Profile lives in <code>~/.snowflake/connections.toml</code>.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  Generated from <code>RUNBOOK.template.html</code>. Last regenerated: <code>{{LAST_GENERATED}}</code>. Figures live under <code>build/figures/</code>. See <code>HANDOFF_BRIEFING.md</code> for design rationale.
+</footer>
+
+</main>
+</body>
+</html>

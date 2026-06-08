@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+*.egg-info/
+
+# PyRel runtime caches (regenerated on demand)
+build/
+rai_code/manual/build/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Secrets / local env
+.env
+.env.*.local
+
+# Jupyter
+.ipynb_checkpoints/
+*.executed.ipynb
+
+# Claude Code local overrides
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# Demo-day artifacts that should be regenerated, not committed
+query_results/
+*.log
