@@ -6,8 +6,13 @@ __pycache__/
 .venv/
 *.egg-info/
 
-# PyRel runtime caches (regenerated on demand)
-build/
+# PyRel runtime caches (regenerated on demand). NOTE: build/ holds the demo's
+# figure-generation scripts + figures, so ignore only the PyRel cache artifacts
+# that PyRel writes into build/ when run from the repo root.
+build/cache/
+build/runs/
+build/*.jsonl
+build/metadata.json
 rai_code/manual/build/
 
 # Editor / OS
@@ -31,3 +36,6 @@ rai_code/manual/build/
 # Demo-day artifacts that should be regenerated, not committed
 query_results/
 *.log
+
+# Downloaded seed datasets (re-fetched by data/fetch_seeds.py; large)
+data/seed/

@@ -1,0 +1,5 @@
+slot_id,slot_name,eligible_meal_type,min_recipes,max_recipes,slot_order
+breakfast,Breakfast,breakfast,1,1,1
+lunch,Lunch,main,1,1,2
+dinner,Dinner,main,1,1,3
+snack,Snack,snack,1,2,4

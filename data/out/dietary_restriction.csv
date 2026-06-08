@@ -1,0 +1,7 @@
+restriction_id,restriction_name,description,excluded_flags
+vegan,Vegan,Excludes all animal products,has_dairy|has_egg|has_fish
+vegetarian,Vegetarian,Excludes meat and fish,has_fish
+gluten_free,Gluten free,Excludes gluten-containing grains,has_gluten
+dairy_free,Dairy free,Excludes milk products,has_dairy
+nut_free,Nut free,Excludes tree nuts,has_nuts
+peanut_free,Peanut free,Excludes peanuts,has_peanuts

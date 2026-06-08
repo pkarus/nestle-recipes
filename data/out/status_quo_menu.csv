@@ -1,0 +1,6 @@
+slot_id,recipe_id,recipe_name,cost_usd,cost_usd_shock
+breakfast,37,Raisins oat bowl with walnuts,1.7277,2.0479
+lunch,137,Firm tofu spinach salad,2.218,2.353
+dinner,140,Firm tofu kale salad,2.2376,2.3726
+snack,161,Cocoa cashews energy balls,0.5696,0.7428
+snack,160,Cocoa almonds energy balls,0.5696,0.7428

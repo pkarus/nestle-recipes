@@ -1,0 +1,26 @@
+commodity_id,commodity_name,unit,base_price_usd_per_kg,current_price_index,current_price_usd_per_kg,peak_price_index,is_volatile
+cocoa,Cocoa,USD/kg,8.5,0.62,5.27,1.95,True
+coffee,Coffee (arabica),USD/kg,6.2,0.92,5.704,1.85,True
+wheat,Wheat,USD/kg,0.32,0.93,0.2976,1.08,False
+soy,Soybean,USD/kg,0.45,1.0,0.45,1.06,False
+oats,Oats,USD/kg,0.4,1.03,0.412,1.1,False
+rice,Rice,USD/kg,0.55,0.88,0.484,1.0,False
+nuts,Tree nuts,USD/kg,9.0,1.22,10.98,1.22,False
+peanuts,Peanuts,USD/kg,3.2,1.06,3.392,1.08,False
+sugar,Sugar,USD/kg,0.45,0.88,0.396,1.0,False
+veg_oil,Vegetable oil,USD/kg,1.2,1.02,1.224,1.1,False
+olive_oil,Olive oil,USD/kg,8.0,0.95,7.6,1.3,True
+lentils,Lentils,USD/kg,1.4,1.02,1.428,1.05,False
+beans,Dry beans,USD/kg,1.6,1.01,1.616,1.04,False
+chickpeas,Chickpeas,USD/kg,1.5,1.03,1.545,1.06,False
+peas,Peas,USD/kg,1.3,1.01,1.313,1.03,False
+potato,Potato,USD/kg,0.6,1.0,0.6,1.02,False
+vegetables,Vegetables (mixed),USD/kg,1.8,1.03,1.854,1.05,False
+fruit,Fruit (mixed),USD/kg,2.2,1.02,2.244,1.04,False
+seeds,Seeds,USD/kg,6.5,1.1,7.15,1.1,False
+quinoa,Quinoa,USD/kg,3.8,1.04,3.952,1.05,False
+maize,Maize,USD/kg,0.3,0.96,0.288,1.0,False
+buckwheat,Buckwheat,USD/kg,1.9,1.02,1.938,1.03,False
+millet,Millet,USD/kg,1.7,1.02,1.734,1.03,False
+rye,Rye,USD/kg,0.45,1.0,0.45,1.02,False
+yeast,Yeast / fortificants,USD/kg,12.0,1.01,12.12,1.02,False

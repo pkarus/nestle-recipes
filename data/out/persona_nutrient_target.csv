@@ -1,0 +1,17 @@
+persona_id,nutrient_code,nutrient_name,unit,min_amount,max_amount,direction,priority
+marco,kcal,Energy,kcal,2800.0,3300,range,1
+marco,protein_g,Protein,g,98.0,200,floor,1
+marco,carb_g,Carbohydrate,g,420.0,600,floor,1
+marco,fat_g,Total fat,g,67.0,117,range,2
+marco,fiber_g,Fiber,g,35.0,80,floor,2
+marco,satfat_g,Saturated fat,g,0.0,33,ceiling,2
+marco,sugars_g,Total sugars,g,0.0,130,ceiling,3
+marco,sodium_mg,Sodium,mg,0.0,2300,ceiling,2
+marco,calcium_mg,Calcium,mg,1000.0,2500,floor,1
+marco,iron_mg,Iron,mg,14.0,45,floor,1
+marco,potassium_mg,Potassium,mg,3400.0,12000,floor,3
+marco,zinc_mg,Zinc,mg,11.0,40,floor,2
+marco,magnesium_mg,Magnesium,mg,400.0,900,floor,3
+marco,vitc_mg,Vitamin C,mg,90.0,2000,floor,3
+marco,vitd_ug,Vitamin D,ug,15.0,100,floor,1
+marco,b12_ug,Vitamin B12,ug,2.4,100,floor,1

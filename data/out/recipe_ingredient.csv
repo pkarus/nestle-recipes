@@ -1,0 +1,800 @@
+recipe_id,ingredient_id,ingredient_name,quantity_g
+1,1,Rolled oats (dry),90
+1,51,Soy milk (fortified),250
+1,43,Banana,120
+1,22,Almonds,25
+1,57,Maple syrup,15
+2,1,Rolled oats (dry),90
+2,66,Fortified oat drink,250
+2,43,Banana,120
+2,23,Walnuts,25
+2,57,Maple syrup,15
+3,1,Rolled oats (dry),90
+3,52,Almond milk (fortified),250
+3,43,Banana,120
+3,25,Peanut butter,25
+3,57,Maple syrup,15
+4,1,Rolled oats (dry),90
+4,51,Soy milk (fortified),250
+4,43,Banana,120
+4,26,Chia seeds,25
+4,57,Maple syrup,15
+5,1,Rolled oats (dry),90
+5,70,Almond milk,250
+5,43,Banana,120
+5,28,Sunflower seeds,25
+5,57,Maple syrup,15
+6,1,Rolled oats (dry),90
+6,51,Soy milk (fortified),250
+6,44,Apple,120
+6,22,Almonds,25
+6,57,Maple syrup,15
+7,1,Rolled oats (dry),90
+7,51,Soy milk (fortified),250
+7,44,Apple,120
+7,23,Walnuts,25
+7,57,Maple syrup,15
+8,1,Rolled oats (dry),90
+8,52,Almond milk (fortified),250
+8,44,Apple,120
+8,25,Peanut butter,25
+8,57,Maple syrup,15
+9,1,Rolled oats (dry),90
+9,70,Almond milk,250
+9,44,Apple,120
+9,26,Chia seeds,25
+9,57,Maple syrup,15
+10,1,Rolled oats (dry),90
+10,70,Almond milk,250
+10,44,Apple,120
+10,28,Sunflower seeds,25
+10,57,Maple syrup,15
+11,1,Rolled oats (dry),90
+11,52,Almond milk (fortified),250
+11,46,Blueberries,120
+11,22,Almonds,25
+11,57,Maple syrup,15
+12,1,Rolled oats (dry),90
+12,70,Almond milk,250
+12,46,Blueberries,120
+12,23,Walnuts,25
+12,57,Maple syrup,15
+13,1,Rolled oats (dry),90
+13,51,Soy milk (fortified),250
+13,46,Blueberries,120
+13,25,Peanut butter,25
+13,57,Maple syrup,15
+14,1,Rolled oats (dry),90
+14,75,Sweetened soya drink,250
+14,46,Blueberries,120
+14,26,Chia seeds,25
+14,57,Maple syrup,15
+15,1,Rolled oats (dry),90
+15,66,Fortified oat drink,250
+15,46,Blueberries,120
+15,28,Sunflower seeds,25
+15,57,Maple syrup,15
+16,1,Rolled oats (dry),90
+16,52,Almond milk (fortified),250
+16,47,Strawberries,120
+16,22,Almonds,25
+16,57,Maple syrup,15
+17,1,Rolled oats (dry),90
+17,51,Soy milk (fortified),250
+17,47,Strawberries,120
+17,23,Walnuts,25
+17,57,Maple syrup,15
+18,1,Rolled oats (dry),90
+18,75,Sweetened soya drink,250
+18,47,Strawberries,120
+18,25,Peanut butter,25
+18,57,Maple syrup,15
+19,1,Rolled oats (dry),90
+19,66,Fortified oat drink,250
+19,47,Strawberries,120
+19,26,Chia seeds,25
+19,57,Maple syrup,15
+20,1,Rolled oats (dry),90
+20,70,Almond milk,250
+20,47,Strawberries,120
+20,28,Sunflower seeds,25
+20,57,Maple syrup,15
+21,1,Rolled oats (dry),90
+21,51,Soy milk (fortified),250
+21,50,Mango,120
+21,22,Almonds,25
+21,57,Maple syrup,15
+22,1,Rolled oats (dry),90
+22,70,Almond milk,250
+22,50,Mango,120
+22,23,Walnuts,25
+22,57,Maple syrup,15
+23,1,Rolled oats (dry),90
+23,75,Sweetened soya drink,250
+23,50,Mango,120
+23,25,Peanut butter,25
+23,57,Maple syrup,15
+24,1,Rolled oats (dry),90
+24,70,Almond milk,250
+24,50,Mango,120
+24,26,Chia seeds,25
+24,57,Maple syrup,15
+25,1,Rolled oats (dry),90
+25,70,Almond milk,250
+25,50,Mango,120
+25,28,Sunflower seeds,25
+25,57,Maple syrup,15
+26,1,Rolled oats (dry),90
+26,70,Almond milk,250
+26,45,Orange,120
+26,22,Almonds,25
+26,57,Maple syrup,15
+27,1,Rolled oats (dry),90
+27,51,Soy milk (fortified),250
+27,45,Orange,120
+27,23,Walnuts,25
+27,57,Maple syrup,15
+28,1,Rolled oats (dry),90
+28,52,Almond milk (fortified),250
+28,45,Orange,120
+28,25,Peanut butter,25
+28,57,Maple syrup,15
+29,1,Rolled oats (dry),90
+29,51,Soy milk (fortified),250
+29,45,Orange,120
+29,26,Chia seeds,25
+29,57,Maple syrup,15
+30,1,Rolled oats (dry),90
+30,51,Soy milk (fortified),250
+30,45,Orange,120
+30,28,Sunflower seeds,25
+30,57,Maple syrup,15
+31,1,Rolled oats (dry),90
+31,66,Fortified oat drink,250
+31,48,Dates,120
+31,22,Almonds,25
+31,57,Maple syrup,15
+32,1,Rolled oats (dry),90
+32,66,Fortified oat drink,250
+32,48,Dates,120
+32,23,Walnuts,25
+32,57,Maple syrup,15
+33,1,Rolled oats (dry),90
+33,66,Fortified oat drink,250
+33,48,Dates,120
+33,25,Peanut butter,25
+33,57,Maple syrup,15
+34,1,Rolled oats (dry),90
+34,52,Almond milk (fortified),250
+34,48,Dates,120
+34,26,Chia seeds,25
+34,57,Maple syrup,15
+35,1,Rolled oats (dry),90
+35,51,Soy milk (fortified),250
+35,48,Dates,120
+35,28,Sunflower seeds,25
+35,57,Maple syrup,15
+36,1,Rolled oats (dry),90
+36,70,Almond milk,250
+36,49,Raisins,120
+36,22,Almonds,25
+36,57,Maple syrup,15
+37,1,Rolled oats (dry),90
+37,52,Almond milk (fortified),250
+37,49,Raisins,120
+37,23,Walnuts,25
+37,57,Maple syrup,15
+38,1,Rolled oats (dry),90
+38,75,Sweetened soya drink,250
+38,49,Raisins,120
+38,25,Peanut butter,25
+38,57,Maple syrup,15
+39,1,Rolled oats (dry),90
+39,70,Almond milk,250
+39,49,Raisins,120
+39,26,Chia seeds,25
+39,57,Maple syrup,15
+40,1,Rolled oats (dry),90
+40,66,Fortified oat drink,250
+40,49,Raisins,120
+40,28,Sunflower seeds,25
+40,57,Maple syrup,15
+41,53,Fortified breakfast cereal,60
+41,51,Soy milk (fortified),250
+41,43,Banana,100
+41,22,Almonds,20
+42,53,Fortified breakfast cereal,60
+42,51,Soy milk (fortified),250
+42,46,Blueberries,100
+42,22,Almonds,20
+43,53,Fortified breakfast cereal,60
+43,51,Soy milk (fortified),250
+43,47,Strawberries,100
+43,22,Almonds,20
+44,53,Fortified breakfast cereal,60
+44,51,Soy milk (fortified),250
+44,49,Raisins,100
+44,22,Almonds,20
+45,53,Fortified breakfast cereal,60
+45,51,Soy milk (fortified),250
+45,50,Mango,100
+45,22,Almonds,20
+46,54,Fortified gluten-free cereal,60
+46,51,Soy milk (fortified),250
+46,43,Banana,100
+46,22,Almonds,20
+47,54,Fortified gluten-free cereal,60
+47,51,Soy milk (fortified),250
+47,46,Blueberries,100
+47,22,Almonds,20
+48,54,Fortified gluten-free cereal,60
+48,51,Soy milk (fortified),250
+48,47,Strawberries,100
+48,22,Almonds,20
+49,54,Fortified gluten-free cereal,60
+49,51,Soy milk (fortified),250
+49,49,Raisins,100
+49,22,Almonds,20
+50,54,Fortified gluten-free cereal,60
+50,51,Soy milk (fortified),250
+50,50,Mango,100
+50,22,Almonds,20
+51,75,Sweetened soya drink,250
+51,43,Banana,150
+51,62,Pea protein powder,30
+51,27,Flaxseed (ground),12
+52,52,Almond milk (fortified),250
+52,43,Banana,150
+52,63,Soy protein powder,30
+52,27,Flaxseed (ground),12
+53,52,Almond milk (fortified),250
+53,43,Banana,150
+53,25,Peanut butter,25
+53,27,Flaxseed (ground),12
+54,70,Almond milk,250
+54,43,Banana,150
+54,18,Firm tofu,80
+54,27,Flaxseed (ground),12
+55,70,Almond milk,250
+55,46,Blueberries,150
+55,62,Pea protein powder,30
+55,27,Flaxseed (ground),12
+56,70,Almond milk,250
+56,46,Blueberries,150
+56,63,Soy protein powder,30
+56,27,Flaxseed (ground),12
+57,66,Fortified oat drink,250
+57,46,Blueberries,150
+57,25,Peanut butter,25
+57,27,Flaxseed (ground),12
+58,52,Almond milk (fortified),250
+58,46,Blueberries,150
+58,18,Firm tofu,80
+58,27,Flaxseed (ground),12
+59,51,Soy milk (fortified),250
+59,47,Strawberries,150
+59,62,Pea protein powder,30
+59,27,Flaxseed (ground),12
+60,51,Soy milk (fortified),250
+60,47,Strawberries,150
+60,63,Soy protein powder,30
+60,27,Flaxseed (ground),12
+61,52,Almond milk (fortified),250
+61,47,Strawberries,150
+61,25,Peanut butter,25
+61,27,Flaxseed (ground),12
+62,70,Almond milk,250
+62,47,Strawberries,150
+62,18,Firm tofu,80
+62,27,Flaxseed (ground),12
+63,75,Sweetened soya drink,250
+63,50,Mango,150
+63,62,Pea protein powder,30
+63,27,Flaxseed (ground),12
+64,70,Almond milk,250
+64,50,Mango,150
+64,63,Soy protein powder,30
+64,27,Flaxseed (ground),12
+65,70,Almond milk,250
+65,50,Mango,150
+65,25,Peanut butter,25
+65,27,Flaxseed (ground),12
+66,70,Almond milk,250
+66,50,Mango,150
+66,18,Firm tofu,80
+66,27,Flaxseed (ground),12
+67,18,Firm tofu,150
+67,31,Spinach (raw),70
+67,38,Mushroom (raw),70
+67,56,Rapeseed (canola) oil,8
+67,64,Nutritional yeast (fortified),8
+67,5,Whole wheat bread,60
+68,18,Firm tofu,150
+68,32,Kale (raw),70
+68,36,Tomato (raw),70
+68,56,Rapeseed (canola) oil,8
+68,64,Nutritional yeast (fortified),8
+68,5,Whole wheat bread,60
+69,18,Firm tofu,150
+69,35,Red bell pepper (raw),70
+69,37,Onion (raw),70
+69,56,Rapeseed (canola) oil,8
+69,64,Nutritional yeast (fortified),8
+69,5,Whole wheat bread,60
+70,26,Chia seeds,30
+70,51,Soy milk (fortified),200
+70,43,Banana,90
+70,57,Maple syrup,12
+71,26,Chia seeds,30
+71,75,Sweetened soya drink,200
+71,46,Blueberries,90
+71,57,Maple syrup,12
+72,26,Chia seeds,30
+72,75,Sweetened soya drink,200
+72,50,Mango,90
+72,57,Maple syrup,12
+73,26,Chia seeds,30
+73,66,Fortified oat drink,200
+73,47,Strawberries,90
+73,57,Maple syrup,12
+74,2,Brown rice (cooked),220
+74,18,Firm tofu,165
+74,39,Zucchini (cooked),90
+74,32,Kale (raw),90
+74,55,Olive oil,12
+74,61,Soy sauce,15
+75,2,Brown rice (cooked),220
+75,19,Tempeh,165
+75,33,Broccoli (cooked),90
+75,36,Tomato (raw),90
+75,55,Olive oil,12
+75,30,Tahini,15
+76,2,Brown rice (cooked),220
+76,15,Chickpeas (cooked),165
+76,40,Cauliflower (cooked),90
+76,36,Tomato (raw),90
+76,55,Olive oil,12
+76,61,Soy sauce,15
+77,2,Brown rice (cooked),220
+77,14,Lentils (cooked),165
+77,36,Tomato (raw),90
+77,35,Red bell pepper (raw),90
+77,55,Olive oil,12
+77,30,Tahini,15
+78,2,Brown rice (cooked),220
+78,16,Black beans (cooked),165
+78,40,Cauliflower (cooked),90
+78,32,Kale (raw),90
+78,55,Olive oil,12
+78,30,Tahini,15
+79,3,White rice (cooked),220
+79,18,Firm tofu,165
+79,32,Kale (raw),90
+79,39,Zucchini (cooked),90
+79,55,Olive oil,12
+79,30,Tahini,15
+80,3,White rice (cooked),220
+80,19,Tempeh,165
+80,39,Zucchini (cooked),90
+80,33,Broccoli (cooked),90
+80,55,Olive oil,12
+80,61,Soy sauce,15
+81,3,White rice (cooked),220
+81,15,Chickpeas (cooked),165
+81,34,Carrot (raw),90
+81,39,Zucchini (cooked),90
+81,55,Olive oil,12
+81,30,Tahini,15
+82,3,White rice (cooked),220
+82,14,Lentils (cooked),165
+82,37,Onion (raw),90
+82,36,Tomato (raw),90
+82,55,Olive oil,12
+82,61,Soy sauce,15
+83,3,White rice (cooked),220
+83,16,Black beans (cooked),165
+83,32,Kale (raw),90
+83,34,Carrot (raw),90
+83,55,Olive oil,12
+83,30,Tahini,15
+84,4,Quinoa (cooked),220
+84,18,Firm tofu,165
+84,31,Spinach (raw),90
+84,40,Cauliflower (cooked),90
+84,55,Olive oil,12
+84,30,Tahini,15
+85,4,Quinoa (cooked),220
+85,19,Tempeh,165
+85,31,Spinach (raw),90
+85,32,Kale (raw),90
+85,55,Olive oil,12
+85,30,Tahini,15
+86,4,Quinoa (cooked),220
+86,15,Chickpeas (cooked),165
+86,31,Spinach (raw),90
+86,36,Tomato (raw),90
+86,55,Olive oil,12
+86,30,Tahini,15
+87,4,Quinoa (cooked),220
+87,14,Lentils (cooked),165
+87,35,Red bell pepper (raw),90
+87,38,Mushroom (raw),90
+87,55,Olive oil,12
+87,30,Tahini,15
+88,4,Quinoa (cooked),220
+88,16,Black beans (cooked),165
+88,40,Cauliflower (cooked),90
+88,41,Sweet corn (cooked),90
+88,55,Olive oil,12
+88,61,Soy sauce,15
+89,6,Whole wheat pasta (cooked),220
+89,18,Firm tofu,165
+89,37,Onion (raw),90
+89,34,Carrot (raw),90
+89,55,Olive oil,12
+89,30,Tahini,15
+90,6,Whole wheat pasta (cooked),220
+90,19,Tempeh,165
+90,36,Tomato (raw),90
+90,37,Onion (raw),90
+90,55,Olive oil,12
+90,61,Soy sauce,15
+91,6,Whole wheat pasta (cooked),220
+91,15,Chickpeas (cooked),165
+91,41,Sweet corn (cooked),90
+91,32,Kale (raw),90
+91,55,Olive oil,12
+91,30,Tahini,15
+92,6,Whole wheat pasta (cooked),220
+92,14,Lentils (cooked),165
+92,32,Kale (raw),90
+92,34,Carrot (raw),90
+92,55,Olive oil,12
+92,30,Tahini,15
+93,6,Whole wheat pasta (cooked),220
+93,16,Black beans (cooked),165
+93,33,Broccoli (cooked),90
+93,37,Onion (raw),90
+93,55,Olive oil,12
+93,30,Tahini,15
+94,7,Couscous (cooked),220
+94,18,Firm tofu,165
+94,34,Carrot (raw),90
+94,32,Kale (raw),90
+94,55,Olive oil,12
+94,61,Soy sauce,15
+95,7,Couscous (cooked),220
+95,19,Tempeh,165
+95,31,Spinach (raw),90
+95,39,Zucchini (cooked),90
+95,55,Olive oil,12
+95,30,Tahini,15
+96,7,Couscous (cooked),220
+96,15,Chickpeas (cooked),165
+96,33,Broccoli (cooked),90
+96,37,Onion (raw),90
+96,55,Olive oil,12
+96,61,Soy sauce,15
+97,7,Couscous (cooked),220
+97,14,Lentils (cooked),165
+97,37,Onion (raw),90
+97,31,Spinach (raw),90
+97,55,Olive oil,12
+97,30,Tahini,15
+98,7,Couscous (cooked),220
+98,16,Black beans (cooked),165
+98,37,Onion (raw),90
+98,35,Red bell pepper (raw),90
+98,55,Olive oil,12
+98,61,Soy sauce,15
+99,8,Buckwheat groats (cooked),220
+99,18,Firm tofu,165
+99,39,Zucchini (cooked),90
+99,38,Mushroom (raw),90
+99,55,Olive oil,12
+99,30,Tahini,15
+100,8,Buckwheat groats (cooked),220
+100,19,Tempeh,165
+100,34,Carrot (raw),90
+100,31,Spinach (raw),90
+100,55,Olive oil,12
+100,30,Tahini,15
+101,8,Buckwheat groats (cooked),220
+101,15,Chickpeas (cooked),165
+101,31,Spinach (raw),90
+101,41,Sweet corn (cooked),90
+101,55,Olive oil,12
+101,61,Soy sauce,15
+102,8,Buckwheat groats (cooked),220
+102,14,Lentils (cooked),165
+102,31,Spinach (raw),90
+102,39,Zucchini (cooked),90
+102,55,Olive oil,12
+102,30,Tahini,15
+103,8,Buckwheat groats (cooked),220
+103,16,Black beans (cooked),165
+103,32,Kale (raw),90
+103,40,Cauliflower (cooked),90
+103,55,Olive oil,12
+103,30,Tahini,15
+104,9,Millet (cooked),220
+104,18,Firm tofu,165
+104,37,Onion (raw),90
+104,32,Kale (raw),90
+104,55,Olive oil,12
+104,30,Tahini,15
+105,9,Millet (cooked),220
+105,19,Tempeh,165
+105,40,Cauliflower (cooked),90
+105,32,Kale (raw),90
+105,55,Olive oil,12
+105,61,Soy sauce,15
+106,9,Millet (cooked),220
+106,15,Chickpeas (cooked),165
+106,35,Red bell pepper (raw),90
+106,34,Carrot (raw),90
+106,55,Olive oil,12
+106,61,Soy sauce,15
+107,9,Millet (cooked),220
+107,14,Lentils (cooked),165
+107,37,Onion (raw),90
+107,33,Broccoli (cooked),90
+107,55,Olive oil,12
+107,61,Soy sauce,15
+108,9,Millet (cooked),220
+108,16,Black beans (cooked),165
+108,32,Kale (raw),90
+108,31,Spinach (raw),90
+108,55,Olive oil,12
+108,61,Soy sauce,15
+109,14,Lentils (cooked),210
+109,32,Kale (raw),100
+109,39,Zucchini (cooked),100
+109,2,Brown rice (cooked),190
+109,56,Rapeseed (canola) oil,12
+110,14,Lentils (cooked),210
+110,39,Zucchini (cooked),100
+110,35,Red bell pepper (raw),100
+110,3,White rice (cooked),190
+110,56,Rapeseed (canola) oil,12
+111,14,Lentils (cooked),210
+111,36,Tomato (raw),100
+111,32,Kale (raw),100
+111,4,Quinoa (cooked),190
+111,56,Rapeseed (canola) oil,12
+112,15,Chickpeas (cooked),210
+112,36,Tomato (raw),100
+112,35,Red bell pepper (raw),100
+112,2,Brown rice (cooked),190
+112,56,Rapeseed (canola) oil,12
+113,15,Chickpeas (cooked),210
+113,38,Mushroom (raw),100
+113,39,Zucchini (cooked),100
+113,3,White rice (cooked),190
+113,56,Rapeseed (canola) oil,12
+114,15,Chickpeas (cooked),210
+114,40,Cauliflower (cooked),100
+114,39,Zucchini (cooked),100
+114,4,Quinoa (cooked),190
+114,56,Rapeseed (canola) oil,12
+115,16,Black beans (cooked),210
+115,41,Sweet corn (cooked),100
+115,39,Zucchini (cooked),100
+115,2,Brown rice (cooked),190
+115,56,Rapeseed (canola) oil,12
+116,16,Black beans (cooked),210
+116,41,Sweet corn (cooked),100
+116,32,Kale (raw),100
+116,3,White rice (cooked),190
+116,56,Rapeseed (canola) oil,12
+117,16,Black beans (cooked),210
+117,35,Red bell pepper (raw),100
+117,32,Kale (raw),100
+117,4,Quinoa (cooked),190
+117,56,Rapeseed (canola) oil,12
+118,17,Kidney beans (cooked),210
+118,39,Zucchini (cooked),100
+118,33,Broccoli (cooked),100
+118,2,Brown rice (cooked),190
+118,56,Rapeseed (canola) oil,12
+119,17,Kidney beans (cooked),210
+119,35,Red bell pepper (raw),100
+119,40,Cauliflower (cooked),100
+119,3,White rice (cooked),190
+119,56,Rapeseed (canola) oil,12
+120,17,Kidney beans (cooked),210
+120,36,Tomato (raw),100
+120,34,Carrot (raw),100
+120,4,Quinoa (cooked),190
+120,56,Rapeseed (canola) oil,12
+121,18,Firm tofu,180
+121,39,Zucchini (cooked),100
+121,38,Mushroom (raw),100
+121,2,Brown rice (cooked),190
+121,61,Soy sauce,14
+121,56,Rapeseed (canola) oil,10
+122,18,Firm tofu,180
+122,31,Spinach (raw),100
+122,32,Kale (raw),100
+122,3,White rice (cooked),190
+122,61,Soy sauce,14
+122,56,Rapeseed (canola) oil,10
+123,18,Firm tofu,180
+123,35,Red bell pepper (raw),100
+123,31,Spinach (raw),100
+123,8,Buckwheat groats (cooked),190
+123,61,Soy sauce,14
+123,56,Rapeseed (canola) oil,10
+124,19,Tempeh,180
+124,36,Tomato (raw),100
+124,33,Broccoli (cooked),100
+124,2,Brown rice (cooked),190
+124,61,Soy sauce,14
+124,56,Rapeseed (canola) oil,10
+125,19,Tempeh,180
+125,33,Broccoli (cooked),100
+125,38,Mushroom (raw),100
+125,3,White rice (cooked),190
+125,61,Soy sauce,14
+125,56,Rapeseed (canola) oil,10
+126,19,Tempeh,180
+126,39,Zucchini (cooked),100
+126,31,Spinach (raw),100
+126,8,Buckwheat groats (cooked),190
+126,61,Soy sauce,14
+126,56,Rapeseed (canola) oil,10
+127,6,Whole wheat pasta (cooked),220
+127,36,Tomato (raw),130
+127,14,Lentils (cooked),150
+127,31,Spinach (raw),90
+127,55,Olive oil,12
+128,6,Whole wheat pasta (cooked),220
+128,36,Tomato (raw),130
+128,14,Lentils (cooked),150
+128,38,Mushroom (raw),90
+128,55,Olive oil,12
+129,6,Whole wheat pasta (cooked),220
+129,36,Tomato (raw),130
+129,14,Lentils (cooked),150
+129,33,Broccoli (cooked),90
+129,55,Olive oil,12
+130,6,Whole wheat pasta (cooked),220
+130,36,Tomato (raw),130
+130,18,Firm tofu,150
+130,31,Spinach (raw),90
+130,55,Olive oil,12
+131,6,Whole wheat pasta (cooked),220
+131,36,Tomato (raw),130
+131,18,Firm tofu,150
+131,38,Mushroom (raw),90
+131,55,Olive oil,12
+132,6,Whole wheat pasta (cooked),220
+132,36,Tomato (raw),130
+132,18,Firm tofu,150
+132,33,Broccoli (cooked),90
+132,55,Olive oil,12
+133,6,Whole wheat pasta (cooked),220
+133,36,Tomato (raw),130
+133,15,Chickpeas (cooked),150
+133,31,Spinach (raw),90
+133,55,Olive oil,12
+134,6,Whole wheat pasta (cooked),220
+134,36,Tomato (raw),130
+134,15,Chickpeas (cooked),150
+134,38,Mushroom (raw),90
+134,55,Olive oil,12
+135,6,Whole wheat pasta (cooked),220
+135,36,Tomato (raw),130
+135,15,Chickpeas (cooked),150
+135,33,Broccoli (cooked),90
+135,55,Olive oil,12
+136,31,Spinach (raw),170
+136,15,Chickpeas (cooked),180
+136,36,Tomato (raw),80
+136,29,Pumpkin seeds,25
+136,55,Olive oil,14
+137,31,Spinach (raw),90
+137,18,Firm tofu,180
+137,41,Sweet corn (cooked),80
+137,34,Carrot (raw),80
+137,23,Walnuts,25
+137,55,Olive oil,14
+138,31,Spinach (raw),90
+138,17,Kidney beans (cooked),180
+138,36,Tomato (raw),80
+138,39,Zucchini (cooked),80
+138,29,Pumpkin seeds,25
+138,55,Olive oil,14
+139,32,Kale (raw),90
+139,15,Chickpeas (cooked),180
+139,34,Carrot (raw),80
+139,33,Broccoli (cooked),80
+139,28,Sunflower seeds,25
+139,55,Olive oil,14
+140,32,Kale (raw),90
+140,18,Firm tofu,180
+140,31,Spinach (raw),80
+140,33,Broccoli (cooked),80
+140,23,Walnuts,25
+140,55,Olive oil,14
+141,32,Kale (raw),90
+141,17,Kidney beans (cooked),180
+141,37,Onion (raw),80
+141,34,Carrot (raw),80
+141,29,Pumpkin seeds,25
+141,55,Olive oil,14
+142,22,Almonds,30
+142,44,Apple,80
+143,22,Almonds,30
+143,43,Banana,80
+144,22,Almonds,30
+144,49,Raisins,80
+145,23,Walnuts,30
+145,44,Apple,80
+146,23,Walnuts,30
+146,43,Banana,80
+147,23,Walnuts,30
+147,49,Raisins,80
+148,24,Cashews,30
+148,44,Apple,80
+149,24,Cashews,30
+149,43,Banana,80
+150,24,Cashews,30
+150,49,Raisins,80
+151,29,Pumpkin seeds,30
+151,44,Apple,80
+152,29,Pumpkin seeds,30
+152,43,Banana,80
+153,29,Pumpkin seeds,30
+153,49,Raisins,80
+154,5,Whole wheat bread,50
+154,25,Peanut butter,20
+154,43,Banana,60
+155,5,Whole wheat bread,50
+155,25,Peanut butter,20
+155,44,Apple,60
+156,5,Whole wheat bread,50
+156,25,Peanut butter,20
+156,47,Strawberries,60
+157,15,Chickpeas (cooked),90
+157,30,Tahini,15
+157,55,Olive oil,8
+157,34,Carrot (raw),100
+158,15,Chickpeas (cooked),90
+158,30,Tahini,15
+158,55,Olive oil,8
+158,35,Red bell pepper (raw),100
+159,15,Chickpeas (cooked),90
+159,30,Tahini,15
+159,55,Olive oil,8
+159,40,Cauliflower (cooked),100
+160,48,Dates,40
+160,1,Rolled oats (dry),30
+160,22,Almonds,20
+160,58,Cocoa powder (unsweetened),6
+161,48,Dates,40
+161,1,Rolled oats (dry),30
+161,24,Cashews,20
+161,58,Cocoa powder (unsweetened),6
+162,48,Dates,40
+162,1,Rolled oats (dry),30
+162,25,Peanut butter,20
+162,58,Cocoa powder (unsweetened),6
+163,65,Vegan protein shake (fortified),250
+163,43,Banana,80
+164,65,Vegan protein shake (fortified),250
+164,46,Blueberries,80
+165,65,Vegan protein shake (fortified),250
+165,50,Mango,80
+166,52,Almond milk (fortified),180
+166,1,Rolled oats (dry),30
+166,46,Blueberries,80
+166,26,Chia seeds,10
+167,51,Soy milk (fortified),180
+167,1,Rolled oats (dry),30
+167,47,Strawberries,80
+167,26,Chia seeds,10
+168,70,Almond milk,180
+168,1,Rolled oats (dry),30
+168,43,Banana,80
+168,26,Chia seeds,10
