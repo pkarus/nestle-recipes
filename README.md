@@ -1,82 +1,108 @@
-# RelationalAI demo template
+# Nestle Decision Intelligence: optimizing Marco's diet
 
-Clone this repo, point Claude Code at it, and Claude will run an interactive
-intake (5 questions), then build a full end-to-end RelationalAI demo
-against the sales-engineering Snowflake account - synthetic data, ontology,
-queries, local notebook, Snowsight notebook, Cortex Agent, runbook, and a
-demo-day pre-flight gate - without further interruption.
+A RelationalAI demo of **Decision Intelligence** for Nestle, built around the
+slide line *"from price volatility to profit protection: algorithmic recipe
+optimization that preserves nutrition and sustainability."* Concretely: optimize
+a daily diet for **Marco**, a busy startup executive who trains for marathons
+and eats vegan.
 
-## Use
+> Marco runs a startup and runs marathons, so he optimizes everything: burn
+> rate, runway, his 5K splits. His diet, though, he runs on vibes. Being an
+> exec, he built a spreadsheet, and forty tabs later he had a beautiful
+> dashboard that told him, in seven colors, exactly how under-fed he was. That
+> is Business Intelligence: it told Marco his diet was a disaster. **Decision
+> Intelligence just hands him dinner.**
+
+One RelationalAI model over real nutrition data and a synthesized recipe catalog
+backs three questions. Running gag: *you can't out-train a bad spreadsheet.*
+
+## The three questions
+
+| # | Reasoner | Question | Result (verified live) |
+|---|---|---|---|
+| Q1 | Rules | Just pick the cheapest vegan recipe per meal slot. Does it feed Marco? | **$5.01/day** but FAILS: short on calories, protein, carbs, B12, and vitamin D |
+| Q2 | Prescriptive (MIP) | Cheapest one-day menu that meets all 16 of his nutrition targets | **OPTIMAL, $7.06/day** - about $2 more buys full compliance (the optimizer pulls in a fortified shake and cereal to clear the B12 / vitamin-D floors) |
+| Q3 | Persistent rule | An operator adds a sustainability rule: cap the diet's carbon | **$7.17/day at 2.92 kg CO2** (+$0.11 for ~33% less carbon); tighten to 2.5 kg and the solver returns **INFEASIBLE** - it proves no compliant menu exists rather than faking one |
+
+The same model also answers *"what recipes and commodities does the diet
+actually use?"* - a recipe to ingredient to commodity breakdown that surfaces
+the diet's price-volatility exposure (the optimal menu leans on soybean, fruit,
+and oats).
+
+## Run it
 
 ```bash
-git clone <this-template> my-new-demo
-cd my-new-demo
-# open in Claude Code (VSCode extension or terminal)
-# tell Claude:  "Start a new RelationalAI demo."
+# Pre-flight gate (~10 min before showtime): connection, data, engines, Q1-Q3, agent
+.venv/bin/python prep_demo.py
+
+# The three questions, end to end against live Snowflake
+.venv/bin/python rai_code/manual/demo_queries.py
+
+# Local notebook (Marco narrative + Plotly figures, including the diet graphs)
+.venv/bin/jupyter lab rai_code/manual/nestle_diet_demo.ipynb
+
+# Cortex agent in Snowflake Intelligence (picker name: nestle_diet)
+.venv/bin/python -m agent.deploy chat "Build Marco the cheapest one-day menu that meets all his nutrition targets."
+.venv/bin/python -m agent.deploy chat "What commodities does Marco's optimized diet depend on?"
 ```
 
-That's it. Claude reads [CLAUDE.md](CLAUDE.md), runs [INTAKE.md](INTAKE.md),
-writes a `BRIEF.md`, and then proceeds through the locked
-[PIPELINE.md](PIPELINE.md) phase by phase. The two existing reference demos
-([supply_chain_demo](../supply_chain_demo) and
-[airplanes_demo](../airplanes_demo)) are wired up by absolute path in
-[REFERENCES.md](REFERENCES.md) - Claude copies the patterns, not the content.
+In **Snowsight**, open the notebook `PK_NESTLE_DIET.NOTEBOOKS.NESTLE_DIET_DEMO`
+and Run All (its first cell `pip install relationalai`). For a no-setup
+overview, open [`RUNNING.html`](RUNNING.html) in any browser - a self-contained
+brief with every result figure embedded.
 
-## What you get
+## What's in here
 
-By the end of a full run, your repo will contain:
+```
+rai_code/manual/
+  nestle_diet.py              the PyRel ontology (11 concepts over PK_NESTLE_DIET)
+  demo_queries.py             Q1 rules, Q2 prescriptive MIP, Q3 persistent rule + diet composition
+  nestle_diet_demo.ipynb      local notebook (narrative + Plotly)
+  nestle_diet_demo_snowsight.ipynb   the Snowsight version (pip install relationalai)
+agent/
+  deploy.py, queries.py       Cortex agent: deploy + the QueryCatalog tools
+data/
+  fetch_seeds.py              download USDA + Open Food Facts seeds
+  build_nestle_diet_data.py   deterministic generator (seed=42)
+  generate_sql.py             DDL (full metadata) + load + validation SQL
+  00_bootstrap.sql            one-time demo role + database (review before running)
+  load_to_snowflake.sh        idempotent loader; upload_snowsight_notebook.sh
+  out/                        generated tables (CSV) + SQL + DATA_DICTIONARY.md
+build/
+  generate_demo_figures.py    result figures incl. recipe->ingredient->commodity diet graphs
+  build_runbook.py            renders RUNNING.html
+prep_demo.py                  the pre-flight gate (5/5)
+BRIEF.md                      full design of record; RUNNING.md the run order
+```
 
-- `rai_code/manual/<domain>.py` - the PyRel ontology (full concepts, properties, derived relationships)
-- `rai_code/manual/demo_queries.py` - the demo questions answered as PyRel queries (rules / graph / heuristic / prescriptive / persistent rule)
-- `rai_code/manual/<domain>_demo.ipynb` - local Jupyter notebook with Plotly visualisations
-- A Snowsight notebook of the same shape, uploaded to the SE account
-- `agent/deploy.py` + `agent/queries.py` - Snowflake Intelligence (Cortex) agent deployment with chart-hint wrappers
-- `data/` - synthetic data generator + Snowflake loader (idempotent)
-- `prep_demo.py` - the 10-minute pre-flight gate that verifies the whole stack before a live demo
-- `RUNNING.html` - speaker runbook with embedded result figures
-- `<DOMAIN>_TALK_TRACK.md` + `SNOWSIGHT_DEMO.md` - local notebook and SI talk tracks
-- `HANDOFF_BRIEFING.md` - context dump for the next human or agent
-- `DEMO_QUESTIONS.md` + `DATA_DICTIONARY.md`
+## The data (real, openly licensed; recipes synthesized)
 
-## Why a template
+- **Nutrition spine:** USDA FoodData Central SR Legacy (public domain, CC0).
+- **Branded products:** Open Food Facts (ODbL) - real vegan/plant-based products
+  with Nutri-Score, allergens, and labels.
+- **Sustainability:** CO2e and water per food from Poore & Nemecek (2018,
+  *Science*), processed by Our World in Data (CC BY 4.0).
+- **Recipes, prices, persona targets:** synthesized from published standards
+  (NIH/FDA Daily Values, ACSM/ISSN athlete intakes). All numbers reproduce from
+  `bash data/load_to_snowflake.sh` (seed=42).
 
-The two existing demos converged on the same shape after weeks of trial and
-error. This template captures the convergence so the next demo lands in a
-day, not a week.
-
-## What's pre-tuned
-
-- The RelationalAI skills plugin (`rai@RelationalAI`) is pre-registered in
-  [.claude/settings.json](.claude/settings.json), so on first session start
-  Claude has all 15 `/rai-*` skills available.
-- Bash command allowlists for `snow`, `uv`, `.venv/bin/python`, `.venv/bin/rai`,
-  and read-only git are pre-approved so Claude won't interrupt mid-run.
-- File edits in the project are auto-accepted (`defaultMode: acceptEdits`).
-- Destructive operations (database drop, agent teardown, `git push`,
-  `git reset --hard`, `rm -rf`) are denied - Claude has to ask.
-
-## Reference demos
-
-- [supply_chain_demo](../supply_chain_demo) - 10-question supply chain demo
-  with min-cost LP and 0/1 knapsack
-- [airplanes_demo](../airplanes_demo) - 5-act EHAM A-CDM demo with rules,
-  graph, heuristic, MIP, and persistent rule
-
-Both live as sibling directories. The template's [REFERENCES.md](REFERENCES.md)
-points at specific files in each.
+Recreate the dataset: `data/fetch_seeds.py` then `data/build_nestle_diet_data.py`
+then `data/generate_sql.py`. The 44 MB of downloaded seed data is gitignored and
+re-fetched on demand.
 
 ## Requirements
 
-- A connection profile `rai` in `~/.snowflake/connections.toml` pointing at
-  the sales-engineering account (account `ajb85638`, role `RAI_DEVELOPER` or
-  `ACCOUNTADMIN`, warehouse `RAI_XS`)
-- Python 3.13 (`.python-version` pinned)
-- `uv` (`pipx install uv` if missing)
-- `snow` CLI (`uv tool install snowflake-cli` if missing)
-- The RelationalAI Native App installed on the SE Snowflake account (it is)
+- A `rai` connection profile in `~/.snowflake/connections.toml` (account
+  `ajb85638`, warehouse `RAI_XS`); the RelationalAI Native App installed on the
+  account.
+- Python 3.13 + `uv`; `snow` CLI. Create the venv with `uv venv` and
+  `uv pip install relationalai pandas pyarrow requests pulp plotly`.
+- One-time: review and run `data/00_bootstrap.sql` (creates the scoped role
+  `RAI_DEMO_NESTLE_DIET` and database `PK_NESTLE_DIET`), then
+  `bash data/load_to_snowflake.sh`.
 
-## Notes
+## Note
 
-The template is reference-only - there are no Python stubs to delete. Claude
-re-derives every file from the references each demo, parameterised on
-`BRIEF.md`.
+This is a sales-engineering demo. The nutrition and sustainability figures are
+real and citable; the recipes, prices, and the Marco persona are synthetic. It
+is not dietary advice.
