@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""prep_demo.py - pre-flight gate for the Nestle / Marco diet-optimization demo.
+"""prep_demo.py - readiness check for the Nestle / Marco diet-optimization demo.
 
 Run ~10 minutes before showtime. Validates, end to end against live Snowflake:
 the connection, the loaded data + anchored numbers, the two reasoner engines,
-the three demo queries (Q1 fail / Q2 OPTIMAL / Q3 re-solve + wall), and the
+the three stages (problem / solution / adaptation re-solve + wall), and the
 Cortex agent. Prints a PASS/FAIL summary and exits non-zero on any failure.
 
     .venv/bin/python prep_demo.py
@@ -72,7 +72,7 @@ def check_queries():
     q3 = "INFEASIBLE" in out and ("2.92" in out or "co2" in out.lower())
     ok = rc == 0 and q1 and q2 and q3
     detail = "" if ok else f"Q1={q1} Q2={q2} Q3={q3} rc={rc}"
-    record("Demo queries Q1/Q2/Q3 (naive $5.01 fail, OPTIMAL $7.06, INFEASIBLE wall)", ok, detail)
+    record("The three stages (naive $5.01 fail, OPTIMAL $7.06, INFEASIBLE wall)", ok, detail)
 
 
 def check_agent():
@@ -88,7 +88,7 @@ def main():
     args = ap.parse_args()
 
     print("=" * 72)
-    print("PREP_DEMO - Nestle / Marco diet-optimization demo pre-flight")
+    print("PREP_DEMO - Nestle / Marco diet-optimization demo readiness check")
     print("=" * 72)
     check_connection()
     check_data()

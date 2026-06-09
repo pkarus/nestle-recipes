@@ -43,7 +43,7 @@ HTML = f"""<!doctype html><html><head><meta charset="utf-8">
 
 <h1>Applications of Decision Intelligence in Nestle: optimizing Marco's diet</h1>
 <p><span class="tag">RelationalAI</span><span class="tag">prescriptive</span>
-<span class="tag">3 questions</span> From ingredient price volatility to profit protection,
+<span class="tag">3 stages</span> From ingredient price volatility to profit protection,
 preserving nutrition and sustainability.</p>
 
 <div class="joke">Meet <b>Marco</b>. He runs a startup and runs marathons, so he optimizes
@@ -54,15 +54,15 @@ Marco his diet was a disaster. <b>Decision Intelligence just hands him dinner.</
 
 <p>Marco is a vegan endurance athlete (~70 kg, ~3,000 kcal/day). One RelationalAI model over
 real nutrition data (USDA FoodData Central, Open Food Facts) and a synthesized recipe catalog
-backs three questions. Running gag: <em>you can't out-train a bad spreadsheet.</em></p>
+backs three stages. Running gag: <em>you can't out-train a bad spreadsheet.</em></p>
 
-<h2>Q1 (Rules) - the problem: cheap looks fine until you check nutrition</h2>
+<h2>Stage 1 - The problem: cheap looks fine until you check nutrition</h2>
 <p>If Marco grabs the cheapest vegan recipe per slot, the day is cheap and quietly
 malnourished. <span class="kpi">$5.01/day, but fails calories, protein, carbs, B12, vitamin D.</span></p>
-{img("q1_nutrient_gap", "Q1 nutrient gap")}
+{img("q1_nutrient_gap", "problem: nutrient gap")}
 
-<h2>Q2 (Prescriptive MIP) - the fix: cheapest menu meeting every target</h2>
-<p>A mixed-integer program picks recipes for the slots (1 breakfast, 2 mains, 1-2 snacks),
+<h2>Stage 2 - The solution: cheapest menu meeting every target</h2>
+<p>An optimization model picks recipes for the slots (1 breakfast, 2 mains, 1-2 snacks),
 all vegan, meeting all 16 nutrient targets, at minimum cost. The optimizer pulls in a
 fortified shake and cereal precisely to clear the B12 and vitamin-D floors.
 <span class="kpi">OPTIMAL: $7.06/day - about $2 more than naive buys full compliance.</span></p>
@@ -73,12 +73,12 @@ fortified shake and cereal precisely to clear the B12 and vitamin-D floors.
 The green nodes are the commodities the diet is exposed to (the price-volatility surface).</p>
 {img("q2_diet_graph", "optimal diet recipe-ingredient-commodity graph")}
 
-<h2>Q3 (Persistent rule) - operator adds a sustainability rule</h2>
+<h2>Stage 3 - Adaptation: the model absorbs a new rule</h2>
 <p>Add a 3.0 kg/day carbon cap; the same model re-solves instantly.
 <span class="kpi">$7.17/day at 2.92 kg - +$0.11 for ~33% less carbon.</span> Tighten the cap
 to 2.5 kg and the solver returns INFEASIBLE: it proves no compliant menu exists rather than
 faking one.</p>
-{img("q3_cost_vs_co2", "Q3 cost vs CO2")}
+{img("q3_cost_vs_co2", "adaptation: cost vs CO2")}
 <h3>The carbon-capped diet graph</h3>
 {img("q3_diet_graph", "capped diet recipe-ingredient-commodity graph")}
 
@@ -89,8 +89,8 @@ Knowing which commodities a diet/recipe depends on is what makes re-optimization
 {img("commodity_exposure", "commodity cost exposure optimal vs capped")}
 
 <h2>How to run</h2>
-<pre>.venv/bin/python prep_demo.py                          # 5/5 pre-flight gate
-.venv/bin/python rai_code/manual/demo_queries.py      # the three questions
+<pre>.venv/bin/python prep_demo.py                          # readiness check
+.venv/bin/python rai_code/manual/demo_queries.py      # the three stages
 .venv/bin/jupyter lab rai_code/manual/nestle_diet_demo.ipynb   # local notebook
 .venv/bin/python -m agent.deploy chat "Build Marco the cheapest compliant menu"
 .venv/bin/python -m agent.deploy chat "What commodities does Marco's diet depend on?"</pre>

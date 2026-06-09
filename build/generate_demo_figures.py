@@ -121,7 +121,7 @@ f1 = go.Figure(go.Bar(x=list(np_), y=[round(v) for v in np_.values()],
                       marker_color=[GREEN if v >= 100 else RED for v in np_.values()],
                       text=[f"{v:.0f}%" for v in np_.values()], textposition="outside"))
 f1.add_hline(y=100, line_dash="dash", annotation_text="target floor")
-f1.update_layout(title=f"Q1: Marco's ${cost:.2f} naive day - % of each nutrient target met (red = miss)",
+f1.update_layout(title=f"The problem: Marco's ${cost:.2f} naive day - % of each nutrient target met (red = miss)",
                  yaxis_title="% of floor", template="plotly_white", width=860, height=440)
 figs.append(("q1_nutrient_gap", f1))
 
@@ -130,7 +130,7 @@ f2 = go.Figure()
 f2.add_bar(name=f"naive (${cost:.2f})", x=keys, y=[round(np_[k]) for k in keys], marker_color=RED)
 f2.add_bar(name=f"optimal (${base_cost:.2f})", x=keys, y=[round(op[k]) for k in keys], marker_color=GREEN)
 f2.add_hline(y=100, line_dash="dash", annotation_text="target floor")
-f2.update_layout(barmode="group", title="Q2: nutrient targets met - naive vs cost-optimal menu",
+f2.update_layout(barmode="group", title="The solution: nutrient targets met - naive vs optimized menu",
                  yaxis_title="% of floor", template="plotly_white", width=900, height=440)
 figs.append(("q2_naive_vs_optimal", f2))
 
@@ -138,7 +138,7 @@ f3 = go.Figure()
 f3.add_bar(name="cost $/day", x=["baseline", "CO2-capped"], y=[round(base_cost, 2), round(cap_cost, 2)], marker_color=BLUE)
 f3.add_bar(name="CO2 kg/day", x=["baseline", "CO2-capped"], y=[round(base_co2, 2), round(cap_co2, 2)], marker_color=GREEN)
 f3.update_layout(barmode="group",
-                 title=f"Q3: +${cap_cost-base_cost:.2f}/day buys {100*(1-cap_co2/base_co2):.0f}% less carbon (tighter caps go infeasible)",
+                 title=f"Adaptation: +${cap_cost-base_cost:.2f}/day buys {100*(1-cap_co2/base_co2):.0f}% less carbon (tighter caps go infeasible)",
                  template="plotly_white", width=720, height=440)
 figs.append(("q3_cost_vs_co2", f3))
 
@@ -149,8 +149,8 @@ f4.update_layout(title="Why re-optimize: commodity price index (1.00 = Jan 2025)
                  yaxis_title="price index", template="plotly_white", width=860, height=420)
 figs.append(("commodity_volatility", f4))
 
-figs.append(("q2_diet_graph", sankey(opt_comp, f"Q2 optimal menu - what Marco eats (${base_cost:.2f}/day)")))
-figs.append(("q3_diet_graph", sankey(cap_comp, f"Q3 carbon-capped menu - what Marco eats (${cap_cost:.2f}/day, {cap_co2:.2f} kg CO2)")))
+figs.append(("q2_diet_graph", sankey(opt_comp, f"The solution - what Marco eats (${base_cost:.2f}/day)")))
+figs.append(("q3_diet_graph", sankey(cap_comp, f"Adaptation - carbon-capped menu - what Marco eats (${cap_cost:.2f}/day, {cap_co2:.2f} kg CO2)")))
 
 # Commodity exposure: $ per commodity, optimal vs capped
 ex_opt = opt_comp.groupby("commodity")["cost"].sum()

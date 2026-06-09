@@ -4,13 +4,13 @@ A RelationalAI Decision Intelligence demo: optimizing the diet of **Marco**, a
 busy startup executive training for marathons (vegan). Theme: from ingredient
 price volatility to profit protection, preserving nutrition and sustainability.
 
-## The three questions
+## The three stages
 
-| # | Reasoner | Question | Result |
+| Stage | Technique | What happens | Result |
 |---|---|---|---|
-| Q1 | Rules | Cheapest vegan recipe per slot - does it feed Marco? | $5.01/day but fails calories, protein, B12, vitamin D |
-| Q2 | Prescriptive (MIP) | Cheapest one-day menu meeting all 16 nutrient targets | OPTIMAL $7.06/day |
-| Q3 | Persistent rule | Re-solve under a 3 kg/day carbon cap | $7.17/day, -33% carbon (+$0.11); tighter -> INFEASIBLE |
+| Problem | Rules | Cheapest vegan recipe per slot - does it feed Marco? | $5.01/day but fails calories, protein, B12, vitamin D |
+| Solution | Optimization model | Cheapest one-day menu meeting all 16 nutrient targets | OPTIMAL $7.06/day |
+| Adaptation | Re-solve under a new rule | Add a 3 kg/day carbon cap (or a price shock) and re-solve | $7.17/day, -33% carbon (+$0.11); tighter -> INFEASIBLE |
 
 Opener: "BI told Marco his diet was a disaster in seven colors; DI just hands him
 dinner." Running gag: "you can't out-train a bad spreadsheet."
@@ -29,17 +29,17 @@ bash data/load_to_snowflake.sh
 Engines `nestle_diet_logic_xs` and `nestle_diet_prescriptive_xs` (both
 HIGHMEM_X64_S) provision on first query and auto-suspend after 10 min.
 
-## Pre-flight (run ~10 min before showtime)
+## Readiness check (run ~10 min before showtime)
 
 ```bash
-.venv/bin/python prep_demo.py                 # full gate (connection, data, engines, Q1-Q3, agent)
+.venv/bin/python prep_demo.py                 # full gate (connection, data, engines, all stages, agent)
 .venv/bin/python prep_demo.py --skip-queries  # fast checks only
 ```
 
 ## Run the demo
 
 ```bash
-# CLI: the three questions, end to end against live Snowflake
+# CLI: the three stages, end to end against live Snowflake
 .venv/bin/python rai_code/manual/demo_queries.py
 
 # Local notebook (Marco narrative + Plotly figures)
@@ -75,10 +75,10 @@ HIGHMEM_X64_S) provision on first query and auto-suspend after 10 min.
 - `data/` - reproducible generator (USDA FoodData Central CC0 + Open Food Facts ODbL
   + synthesized recipes/prices), DDL/load/validation SQL, `00_bootstrap.sql`.
 - `rai_code/manual/nestle_diet.py` - the PyRel ontology (11 concepts).
-- `rai_code/manual/demo_queries.py` - the three questions (Q1 rules, Q2 MIP, Q3 rule).
+- `rai_code/manual/demo_queries.py` - the three stages (problem rules, optimization model, adaptation rule).
 - `rai_code/manual/nestle_diet_demo.ipynb` - the local viz notebook.
 - `agent/deploy.py`, `agent/queries.py` - the Cortex agent.
-- `prep_demo.py` - the pre-flight gate. `BRIEF.md` - the full design of record.
+- `prep_demo.py` - the pre-demo readiness check. `BRIEF.md` - the full design of record.
 
 ## Data provenance and licensing
 

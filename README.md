@@ -14,28 +14,52 @@ and eats vegan.
 > Intelligence just hands him dinner.**
 
 One RelationalAI model over real nutrition data and a synthesized recipe catalog
-backs three questions. Running gag: *you can't out-train a bad spreadsheet.*
+backs the whole demo, which unfolds in three stages: the problem, the solution,
+and how it adapts when the rules change. Running gag: *you can't out-train a bad
+spreadsheet.*
 
-## The three questions
+## How the demo unfolds
 
-| # | Reasoner | Question | Result (verified live) |
-|---|---|---|---|
-| Q1 | Rules | Just pick the cheapest vegan recipe per meal slot. Does it feed Marco? | **$5.01/day** but FAILS: short on calories, protein, carbs, B12, and vitamin D |
-| Q2 | Prescriptive (MIP) | Cheapest one-day menu that meets all 16 of his nutrition targets | **OPTIMAL, $7.06/day** - about $2 more buys full compliance (the optimizer pulls in a fortified shake and cereal to clear the B12 / vitamin-D floors) |
-| Q3 | Persistent rule | An operator adds a sustainability rule: cap the diet's carbon | **$7.17/day at 2.92 kg CO2** (+$0.11 for ~33% less carbon); tighten to 2.5 kg and the solver returns **INFEASIBLE** - it proves no compliant menu exists rather than faking one |
+One analysis in three stages, on the same model and data.
 
-The same model also answers *"what recipes and commodities does the diet
-actually use?"* - a recipe to ingredient to commodity breakdown that surfaces
-the diet's price-volatility exposure (the optimal menu leans on soybean, fruit,
-and oats).
+### 1. The problem
+Marco grabs the cheapest vegan recipe for each meal slot. The day costs
+**$5.01** and looks fine, until you check the nutrition: it falls short on
+calories, protein, carbohydrate, vitamin B12, and vitamin D. Cost-driven,
+gut-feel meal planning quietly leaves him under-fed.
+
+### 2. The solution
+An optimization model picks the cheapest one-day menu that meets all 16 of his
+nutrition targets: **$7.06/day**. About $2 more than the naive day buys full
+compliance, because the model pulls in a fortified shake and cereal to clear the
+B12 and vitamin-D floors a whole-food vegan diet misses.
+
+### 3. Adaptation
+Decision Intelligence is not one fixed answer, it is how fast the model adapts
+when a rule changes. Add a constraint and it re-solves in seconds and explains
+the trade-off:
+
+- **A supplier price shock.** Cocoa and coffee swing 40-60% in a year (Nestle's
+  own named inflationary inputs). Re-optimize the menu to hold the cost line:
+  the deck's "price volatility to profit protection," on a plate.
+- **A sustainability target.** Cap the menu's carbon and it re-solves to
+  **2.92 kg CO2 for +$0.11/day** (about a third less carbon). Push the cap too
+  far and it returns **infeasible** rather than inventing a diet that does not
+  exist.
+- A tighter budget, a prep-time limit for a busy week, or a new dietary
+  restriction such as gluten-free all work the same way.
+
+Throughout, the model can also show **what the diet is made of**: a recipe to
+ingredient to commodity breakdown that surfaces exactly which commodities the
+diet depends on (the optimal menu leans on soybean, fruit, and oats).
 
 ## Run it
 
 ```bash
-# Pre-flight gate (~10 min before showtime): connection, data, engines, Q1-Q3, agent
+# Readiness check before a demo: connection, data, engines, all three stages, agent
 .venv/bin/python prep_demo.py
 
-# The three questions, end to end against live Snowflake
+# The three stages, end to end against live Snowflake
 .venv/bin/python rai_code/manual/demo_queries.py
 
 # Local notebook (Marco narrative + Plotly figures, including the diet graphs)
@@ -56,7 +80,7 @@ brief with every result figure embedded.
 ```
 rai_code/manual/
   nestle_diet.py              the PyRel ontology (11 concepts over PK_NESTLE_DIET)
-  demo_queries.py             Q1 rules, Q2 prescriptive MIP, Q3 persistent rule + diet composition
+  demo_queries.py             the three stages (problem rules, optimization model, adaptation rule) + diet composition
   nestle_diet_demo.ipynb      local notebook (narrative + Plotly)
   nestle_diet_demo_snowsight.ipynb   the Snowsight version (pip install relationalai)
 agent/
@@ -71,7 +95,7 @@ data/
 build/
   generate_demo_figures.py    result figures incl. recipe->ingredient->commodity diet graphs
   build_runbook.py            renders RUNNING.html
-prep_demo.py                  the pre-flight gate (5/5)
+prep_demo.py                  the pre-demo readiness check
 BRIEF.md                      full design of record; RUNNING.md the run order
 ```
 

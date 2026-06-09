@@ -1,10 +1,11 @@
 """Demo queries for the Nestle diet/menu optimization demo (Marco).
 
-Q1  Rules / problem exposure: the recipe catalog for a vegan athlete, and the
-    naive "cheapest recipe per slot" day that looks cheap but misses Marco's
-    nutrition targets.
-Q2  Prescriptive (MIP): the cheapest one-day menu that meets every target.   [TODO]
-Q3  Persistent rule: re-solve under a commodity price shock / added rule.     [TODO]
+Stage 1  The problem: the vegan recipe catalog, and the naive "cheapest recipe
+    per slot" day that looks cheap but misses Marco's nutrition targets.
+Stage 2  The solution: an optimization model finds the cheapest one-day menu
+    that meets every nutrition target.
+Stage 3  Adaptation: add a rule (carbon cap / price shock) and the model
+    re-solves, or proves infeasibility.
 
 Run from project root:
     .venv/bin/python rai_code/manual/demo_queries.py
@@ -61,7 +62,7 @@ def marco_targets():
 
 def q1_rules():
     print("=" * 72)
-    print("Q1  RULES / PROBLEM EXPOSURE")
+    print("STAGE 1  THE PROBLEM: naive cheapest-per-slot day vs Marco's targets")
     print("=" * 72)
 
     # 1a. The catalog Marco's planner can draw from (vegan-eligible recipes).
@@ -182,7 +183,7 @@ def _show_menu(title, si, df):
 
 def q2_prescriptive():
     print("\n" + "=" * 72)
-    print("Q2  PRESCRIPTIVE: cheapest one-day menu that meets every target")
+    print("STAGE 2  THE SOLUTION: cheapest one-day menu that meets every target")
     print("=" * 72)
     problem = _build_menu_problem("cost_usd")
     problem.solve("highs")
@@ -192,12 +193,12 @@ def q2_prescriptive():
 
 
 def q3_persistent_rule(problem, base_df, co2_cap=3.0, wall_cap=2.5):
-    """Operator adds a sustainability rule. Reuse Q2's SAME Problem (constraints
+    """Operator adds a sustainability rule. Reuse the solution stage's SAME Problem (constraints
     accumulate; re-solving updates the decision values in place), so the rule
     persists on the model and propagates to the re-solve. Then tighten further
     to show the feasibility wall."""
     print("\n" + "=" * 72)
-    print(f"Q3  PERSISTENT RULE: operator caps the diet at {co2_cap} kg CO2/day, re-solve")
+    print(f"STAGE 3  ADAPTATION: operator caps the diet at {co2_cap} kg CO2/day, re-solve")
     print("=" * 72)
     base_cost = base_df.cost_usd.sum() if len(base_df) else 0.0
     base_co2 = base_df.co2e_kg.sum() if len(base_df) else 0.0
